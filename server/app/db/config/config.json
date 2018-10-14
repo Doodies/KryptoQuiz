@@ -1,0 +1,11 @@
+{
+  "DEVELOPMENT": {
+    "use_env_variable": "DATABASE_URL",
+    "maxConcurrentQueries": 100,
+    "pool": {
+      "maxConnections": 5,
+      "maxIdleTime": 30
+    },
+    "language": "en"
+  }
+}
