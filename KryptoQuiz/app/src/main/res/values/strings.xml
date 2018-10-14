@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">KryptoQuiz</string>
-    <string name="total_games">Total Games</string>
-    <string name="question">Question onetext. Can be quite long and describe a scenario. Lorem ipsum dolor sit amet</string>
-    <string name="no_data_found_internet_failed">No Internet Found</string>
-    <string name="something_went_wrong">Something went wrong</string>
-</resources>
