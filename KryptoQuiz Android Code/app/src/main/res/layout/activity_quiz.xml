@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:background="@drawable/onboarding2"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/question_format"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10_dp"
+        android:text="7 of 10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_20_dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_10_dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question_format">
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_1"
+            app:layout_constraintLeft_toRightOf="@id/iv_1"
+            app:layout_constraintTop_toTopOf="@id/iv_1" />
+
+
+        <ImageView
+            android:id="@+id/iv_2"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v1"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v2"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_2"
+            app:layout_constraintLeft_toRightOf="@id/iv_2"
+            app:layout_constraintTop_toTopOf="@id/iv_2" />
+
+        <ImageView
+            android:id="@+id/iv_3"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v2"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v3"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_3"
+            app:layout_constraintLeft_toRightOf="@id/iv_3"
+            app:layout_constraintTop_toTopOf="@id/iv_3" />
+
+        <ImageView
+            android:id="@+id/iv_4"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v3"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v4"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_4"
+            app:layout_constraintLeft_toRightOf="@id/iv_4"
+            app:layout_constraintTop_toTopOf="@id/iv_4" />
+
+
+        <ImageView
+            android:id="@+id/iv_5"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v4"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v5"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_5"
+            app:layout_constraintLeft_toRightOf="@id/iv_5"
+            app:layout_constraintTop_toTopOf="@id/iv_5" />
+
+
+        <ImageView
+            android:id="@+id/iv_6"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v5"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v6"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_6"
+            app:layout_constraintLeft_toRightOf="@id/iv_6"
+            app:layout_constraintTop_toTopOf="@id/iv_6" />
+
+
+        <ImageView
+            android:id="@+id/iv_7"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v6"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v7"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_7"
+            app:layout_constraintLeft_toRightOf="@id/iv_7"
+            app:layout_constraintTop_toTopOf="@id/iv_7" />
+
+        <ImageView
+            android:id="@+id/iv8"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v7"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v8"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv8"
+            app:layout_constraintLeft_toRightOf="@id/iv8"
+            app:layout_constraintTop_toTopOf="@id/iv8" />
+
+        <ImageView
+            android:id="@+id/iv9"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v8"
+            app:srcCompat="@drawable/circle_bg" />
+
+        <View
+            android:id="@+id/v9"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv9"
+            app:layout_constraintLeft_toRightOf="@id/iv9"
+            app:layout_constraintTop_toTopOf="@id/iv9" />
+
+        <ImageView
+            android:id="@+id/iv10"
+            android:layout_width="@dimen/common_15_dp"
+            android:layout_height="@dimen/common_15_dp"
+            app:layout_constraintLeft_toRightOf="@+id/v9"
+            app:srcCompat="@drawable/circle_bg" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/p_bar"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.sourcedev.kryptoquiz.util.CustomViewPager
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+</android.support.constraint.ConstraintLayout>

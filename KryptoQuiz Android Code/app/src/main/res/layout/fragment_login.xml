@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/loginLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/padding_l"
+            android:paddingEnd="@dimen/padding_l"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/padding_xl"
+                    android:id="@+id/imageLogin"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_mobile" />
+
+                <TextView
+                    android:id="@+id/headingLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ssp_bold"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/padding_l"
+                    android:paddingTop="@dimen/padding_l"
+                    android:text="Please enter your mobile number to proceed"
+                    android:textColor="@color/black"
+                    android:textSize="26sp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:paddingEnd="@dimen/padding_drawables"
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/personSignUp"
+                        android:layout_gravity="center_vertical"
+                        app:srcCompat="@drawable/ic_person_grey_24dp"/>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/editTextLoginWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:hint="Enter Mobile Number"
+                            android:id="@+id/editTextNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:textColorHint="@color/l_grey" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/button_round"
+                android:drawableStart="@drawable/checked"
+                android:drawablePadding="@dimen/padding_n"
+                android:fontFamily="@font/ssp_bold"
+                android:text="Continue"
+                android:paddingLeft="@dimen/padding_n"
+                android:paddingStart="@dimen/padding_n"
+                android:paddingEnd="@dimen/padding_n"
+                android:paddingRight="@dimen/padding_n"
+                android:textSize="18sp"
+                android:layout_marginBottom="@dimen/common_10_dp"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/overlay_progress_layout"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

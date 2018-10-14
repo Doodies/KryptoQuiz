@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "718466128870",
+    "firebase_url": "https://kryptoquiz-22368.firebaseio.com",
+    "project_id": "kryptoquiz-22368",
+    "storage_bucket": "kryptoquiz-22368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718466128870:android:aed0856081e7bd08",
+        "android_client_info": {
+          "package_name": "com.sourcedev.kryptoquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718466128870-5e3so1fv2f4kubu6rrklmn3kf2bae02r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuz5J5iM53NynkChhVuaXhWS1r-ruCvq8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
