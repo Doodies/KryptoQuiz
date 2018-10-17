@@ -120,14 +120,14 @@ public class OnBoardingActivity extends AppCompatActivity {
                 button.setText("  CONTINUE  ");
                 Utils.darkenStatusBar(getActivity(), R.color.pinkish_tan);
                 image.setVisibility(View.GONE);
-                layout.setBackgroundResource(R.drawable.onboarding);
+                layout.setBackgroundResource(R.drawable.image1);
             } else {
                 description.setText("Earn Money with your Knowledge");
                 textViewBold.setVisibility(View.GONE);
                 textView.setVisibility(View.GONE);
                 button.setText("  GET STARTED  ");
                 image.setVisibility(View.VISIBLE);
-                layout.setBackgroundResource(R.drawable.onboarding2);
+                layout.setBackgroundResource(R.drawable.image2);
             }
 
             button.setOnClickListener(new View.OnClickListener() {

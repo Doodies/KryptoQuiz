@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
     private void checkLogin() {
         Intent intent;
         if (Utils.isUserLoggedIn(this)) {
-            intent = new Intent(this, BaseActivity.class);
-//            intent = new Intent(this, QuizActivity.class);
+//            intent = new Intent(this, BaseActivity.class);
+            intent = new Intent(this, QuizActivity.class);
 //            intent.putExtra("quizId", "2");
 //
         } else {
-            intent = new Intent(this, OnBoardingActivity.class);
+            intent = new Intent(this, QuizActivity.class);
         }
         startActivity(intent);
     }
