@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_30_dp"
+        android:layout_marginStart="@dimen/common_30_dp"
+        android:layout_marginRight="@dimen/common_30_dp"
+        android:layout_marginEnd="@dimen/common_30_dp"
+        android:background="@drawable/bg_button"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_n"
+            android:layout_marginStart="@dimen/padding_n"
+            android:layout_marginRight="@dimen/padding_n"
+            android:layout_marginEnd="@dimen/padding_n"
+            android:textSize="@dimen/h1"
+            android:text="heading"
+            android:fontFamily="@font/ssp_bold"
+            android:textColor="#000000"
+            android:padding="@dimen/padding_n"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_n"
+            android:layout_marginStart="@dimen/padding_n"
+            android:layout_marginRight="@dimen/padding_n"
+            android:layout_marginEnd="@dimen/padding_n"
+            android:textSize="16sp"
+            android:fontFamily="@font/ssp_regular"
+            android:textColor="@color/d_grey"
+            android:text="footer"
+            android:visibility="visible"
+            android:lines="2"
+            android:layout_gravity="center"
+            android:paddingBottom="14dp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/common_10_dp"
+            android:background="@color/l_grey"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/okayTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Okay"
+                android:gravity="center"
+                android:textSize="@dimen/h3"
+                android:paddingLeft="@dimen/common_10_dp"
+                android:paddingStart="@dimen/common_10_dp"
+                android:paddingRight="@dimen/common_10_dp"
+                android:paddingEnd="@dimen/common_10_dp"
+                android:paddingTop="@dimen/common_12_dp"
+                android:paddingBottom="@dimen/common_4_dp"
+                android:textColor="@color/red"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -49,5 +49,10 @@
         <item name="android:navigationBarColor">#fff</item>
     </style>
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fadein</item>
+    </style>
+
+
 
 </resources>

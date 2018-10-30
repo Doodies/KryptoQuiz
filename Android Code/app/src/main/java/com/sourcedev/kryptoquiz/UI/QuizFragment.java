@@ -51,14 +51,6 @@ public class QuizFragment extends Fragment {
     int qnum;
     QuestionResponse object;
 
-//    public static QuizFragment newInstance(int number) {
-//        QuizFragment quizFragment = new QuizFragment();
-//        Bundle args = new Bundle();
-//        args.putInt(NUM, number);
-//        quizFragment.setArguments(args);
-//        return quizFragment;
-//    }
-
     public static QuizFragment newInstance(int number, QuestionResponse body) {
         QuizFragment quizFragment = new QuizFragment();
         Bundle args = new Bundle();
@@ -136,11 +128,9 @@ public class QuizFragment extends Fragment {
                     secondsRemaining.startAnimation(hyperspaceJump);
                 }
                 secondsRemaining.setText("" + ((millisUntilFinished / 1000)-1));
-                //here you can have your logic to set text to edittext
             }
 
             public void onFinish() {
-                Log.e("onFinish: ", "Finish " + qnum);
                 ((QuizActivity) getActivity()).setViewPagerPosition(++qnum);
             }
 
