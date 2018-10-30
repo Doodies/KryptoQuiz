@@ -294,7 +294,6 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void setAnswers(int qnum, String ans, int i) {
-        Log.e(TAG, "setAnswers: " + i + "  " + qnum);
         if (qnum ==  0) {
             maps.put(qnum, 0);
             maps.put(qnum, i);
