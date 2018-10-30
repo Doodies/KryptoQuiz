@@ -1,5 +1,6 @@
 package com.sourcedev.kryptoquiz.activities;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -30,7 +31,9 @@ import com.google.gson.JsonObject;
 import com.sourcedev.kryptoquiz.R;
 import com.sourcedev.kryptoquiz.UI.QuizFragment;
 import com.sourcedev.kryptoquiz.models.QuestionResponse;
+import com.sourcedev.kryptoquiz.models.submitQuizResponse;
 import com.sourcedev.kryptoquiz.network.ApiCalls;
+import com.sourcedev.kryptoquiz.util.AlertDialogUtils;
 import com.sourcedev.kryptoquiz.util.Constants;
 import com.sourcedev.kryptoquiz.util.CustomViewPager;
 import com.sourcedev.kryptoquiz.util.SharedPrefrencesHelper;
@@ -90,7 +93,7 @@ public class QuizActivity extends AppCompatActivity {
         maps = new HashMap<>();
         correctAns = new ArrayList<>();
         givenAnswers = new ArrayList<>();
-        quizId = getIntent().getExtras().getString("quizId");
+//        quizId = getIntent().getExtras().getString("quizId");
 //        for (int i = 0; i < PAGES; i++) {
         // Number of pages in a vertical Pager
 //            new QuizFragment();
@@ -103,50 +106,63 @@ public class QuizActivity extends AppCompatActivity {
 
     private void fetchJsonResponse() {
         // Pass second argument as "null" for GET requests
-        setVisibility(true);
-        JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, Constants.API_BASE_URL + "api/secure/getQuizQues?quizId=" + quizId, null,
-                new com.android.volley.Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        setVisibility(false);
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("message");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                QuestionResponse ob = new QuestionResponse();
-                                ob.setAns((String) jsonObject.getString("ans"));
-                                correctAns.add(Integer.parseInt(jsonObject.getString("ans")));
-                                ob.setOptionOne((String) jsonObject.getString("o_one"));
-                                ob.setOptionTwo((String) jsonObject.getString("o_two"));
-                                ob.setOptionThree((String) jsonObject.getString("o_three"));
-                                ob.setOptionFour((String) jsonObject.getString("o_four"));
-                                ob.setQues((String) jsonObject.getString("ques"));
-                                listQuestions.add(ob);
-                            }
-                            callFragment();
-                            Log.e(TAG, "onResponse: ");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                setVisibility(false);
-            }
-        }) {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                final String token = SharedPrefrencesHelper.getInstance().getString(Constants.USER_TOKEN, null);
-                params.put("Content-Type", "application/json");
-                params.put("jwt-token", token);
-                return params;
-            }
-        };
+//        setVisibility(true);
+//        JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, Constants.API_BASE_URL + "api/secure/getQuizQues?quizId=" + quizId, null,
+//                new com.android.volley.Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        setVisibility(false);
+//                        try {
+//                            JSONArray jsonArray = response.getJSONArray("message");
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                                QuestionResponse ob = new QuestionResponse();
+//                                ob.setAns((String) jsonObject.getString("ans"));
+//                                correctAns.add(Integer.parseInt(jsonObject.getString("ans")));
+//                                ob.setOptionOne((String) jsonObject.getString("o_one"));
+//                                ob.setOptionTwo((String) jsonObject.getString("o_two"));
+//                                ob.setOptionThree((String) jsonObject.getString("o_three"));
+//                                ob.setOptionFour((String) jsonObject.getString("o_four"));
+//                                ob.setQues((String) jsonObject.getString("ques"));
+//                                listQuestions.add(ob);
+//                            }
+//                            callFragment();
+//                            Log.e(TAG, "onResponse: ");
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new com.android.volley.Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                setVisibility(false);
+//            }
+//        }) {
+//            @Override
+//            public Map<String, String> getHeaders() throws AuthFailureError {
+//                Map<String, String> params = new HashMap<String, String>();
+//                final String token = SharedPrefrencesHelper.getInstance().getString(Constants.USER_TOKEN, null);
+//                params.put("Content-Type", "application/json");
+//                params.put("jwt-token", token);
+//                return params;
+//            }
+//        };
+//
+//        /* Add your Requests to the RequestQueue to execute */
+//        mRequestQueue.add(req);
 
-        /* Add your Requests to the RequestQueue to execute */
-        mRequestQueue.add(req);
+        for (int i = 0; i < 10; i++) {
+            QuestionResponse ob = new QuestionResponse();
+            ob.setAns("1");
+            correctAns.add(1);
+            ob.setOptionOne("Edward Calahan");
+            ob.setOptionTwo("o_two");
+            ob.setOptionThree("o_three");
+            ob.setOptionFour("o_four");
+            ob.setQues("Who invented first stock ticker");
+            listQuestions.add(ob);
+        }
+        callFragment();
     }
 
     private void callFragment() {
@@ -227,6 +243,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onFinish() {
                 callSubmitQuiz(finalCorrect);
                 setVisibility(false);
+                Toast.makeText(QuizActivity.this, "Submit Successfully", Toast.LENGTH_SHORT);
             }
 
         }.start();
@@ -234,37 +251,26 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void callSubmitQuiz(final int correct) {
-        String url = Constants.API_BASE_URL + "api/secure/submitQuiz/";
-        StringRequest MyStringRequest = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+        ApiCalls.postQuizResponse(quizId, 9).enqueue(new Callback<submitQuizResponse>() {
             @Override
-            public void onResponse(String response) {
-
-            }
-        }, new com.android.volley.Response.ErrorListener() { //Create an error listener to handle errors appropriately.
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //This code is executed if there is an error.
-            }
-        })
-        {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                final String token = SharedPrefrencesHelper.getInstance().getString(Constants.USER_TOKEN, null);
-                params.put("Content-Type", "application/json");
-                params.put("jwt-token", token);
-                return params;
+            public void onResponse(Call<submitQuizResponse> call, Response<submitQuizResponse> response) {
+                if (response.isSuccessful()) {
+                    AlertDialogUtils.showTextDialogForOkay(QuizActivity.this, "Result", "You have given " + correct + " Answers out of 10 questions", new AlertDialogUtils.OkayDialog() {
+                        @Override
+                        public void onOkayClick() {
+                            Intent intent = new Intent(QuizActivity.this, BaseActivity.class);
+//                            intent.putExtra("random_sample", 7);
+                            startActivity(intent);
+                        }
+                    });
+                }
             }
 
             @Override
-            protected Map<String, String> getParams () {
-            Map<String, String> params = new HashMap<String, String>();
-            params.put("quizId", quizId);
-            params.put("correctCount", String.valueOf(correct));
-            return params;
-           }
-        };
-        mRequestQueue.add(MyStringRequest);
+            public void onFailure(Call<submitQuizResponse> call, Throwable t) {
+
+            }
+        });
     }
 
 
@@ -288,9 +294,14 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void setAnswers(int qnum, String ans, int i) {
-        Log.e(TAG, "setAnswers: " + i + "  " + qnum);
-        maps.put(qnum, 0);
-        maps.put(qnum, i);
+        if (qnum ==  0) {
+            maps.put(qnum, 0);
+            maps.put(qnum, i);
+        } else {
+            maps.put(qnum-1, 0);
+            maps.put(qnum-1, i);
+        }
+
     }
 
 

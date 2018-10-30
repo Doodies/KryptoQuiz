@@ -27,7 +27,7 @@
 
     <style name="StatusBarOverlay" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/pinkish_tan</item>
-        <item name="colorPrimaryDark">#732E3D</item>
+        <item name="colorPrimaryDark">#143659</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/ssp_regular</item>
         <item name="windowNoTitle">true</item>
@@ -48,6 +48,11 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">#fff</item>
     </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fadein</item>
+    </style>
+
 
 
 </resources>

@@ -4,6 +4,7 @@ import com.sourcedev.kryptoquiz.models.GeneralResponse;
 import com.sourcedev.kryptoquiz.models.QuestionResponse;
 import com.sourcedev.kryptoquiz.models.User;
 import com.sourcedev.kryptoquiz.models.VerifyOtpResponse;
+import com.sourcedev.kryptoquiz.models.submitQuizResponse;
 
 import java.util.List;
 
@@ -55,6 +56,10 @@ class ApiServices {
 
         @GET("/api/secure/getQuizQues")
         Call< List<QuestionResponse> > getQuestion(@Query("quizId") String quizId);
+
+        @FormUrlEncoded
+        @POST("/api/secure/submitQuiz")
+        Call<submitQuizResponse> postSumbitQuiz(@Field("quizId") String quizId, @Field("correctCount") Integer count);
 
     }
 }
