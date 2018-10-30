@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
-    android:background="@drawable/onboarding2"
+    android:background="@drawable/image3"
     android:layout_height="match_parent">
 
     <TextView
