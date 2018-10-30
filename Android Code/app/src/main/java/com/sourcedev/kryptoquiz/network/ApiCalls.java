@@ -4,6 +4,7 @@ import com.sourcedev.kryptoquiz.models.GeneralResponse;
 import com.sourcedev.kryptoquiz.models.QuestionResponse;
 import com.sourcedev.kryptoquiz.models.User;
 import com.sourcedev.kryptoquiz.models.VerifyOtpResponse;
+import com.sourcedev.kryptoquiz.models.submitQuizResponse;
 
 import java.util.List;
 
@@ -29,6 +30,11 @@ public class ApiCalls {
 
     public static Call<List<QuestionResponse> > getQuestions(String quizId) {
         return ApiServices.getApiServiceWithToken().getQuestion(quizId);
+    }
+
+
+    public static Call<submitQuizResponse> postQuizResponse(String quizId, int correctAns) {
+        return ApiServices.getApiServiceWithToken().postSumbitQuiz(quizId, correctAns);
     }
 
 
