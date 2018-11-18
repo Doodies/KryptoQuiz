@@ -37,15 +37,10 @@ Users will transact in qcoin instead of Fiat currency money or worthless game co
 4. Integrating Crypto Currency with NodeJS was fun, explorative and interesting.
 
 ### **Screenshots**
-<img src="Assets/1.jpg" width="200">
-<img src="Assets/2.jpg" width="200">
-<img src="Assets/3.jpg" width="200">
-<img src="Assets/4.jpg" width="200">
-<img src="Assets/5.jpg" width="200">
-<img src="Assets/6.jpg" width="200">
-<img src="Assets/7.jpg" width="200">
-<img src="Assets/8.jpg" width="200">
-<img src="Assets/9.jpg" width="200">
+<img src="Assets/1.jpg" width="200">|<img src="Assets/2.jpg" width="200">|<img src="Assets/3.jpg" width="200">
+------------ | ------------- | -------------
+<img src="Assets/4.jpg" width="200">|<img src="Assets/5.jpg" width="200">|<img src="Assets/6.jpg" width="200">
+<img src="Assets/7.jpg" width="200">|<img src="Assets/8.jpg" width="200">|<img src="Assets/9.jpg" width="200">
 
 ### **Notes**
 This application is currenly not deployed on cloud server.
